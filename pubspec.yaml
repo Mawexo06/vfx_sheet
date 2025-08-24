@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
-    sdk: flutter       # umožní importovať package:flutter_localizations
+    sdk: flutter
   hooks_riverpod: ^2.3.6
   drift: ^2.13.0
   intl: ^0.18.0
