@@ -40,7 +40,7 @@ class Takes extends Table {
 
 @DriftDatabase(tables: [Projects, ShootingDays, Slates, Shots, Takes])
 class AppDatabase extends _$AppDatabase {
-  AppDatabase() : super(WebDatabase('vfx_sheet_db'));
+  AppDatabase() : super(WebDatabase()));
 
   @override
   int get schemaVersion => 1;
