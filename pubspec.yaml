@@ -18,16 +18,12 @@ dependencies:
   json_annotation: ^4.8.1
   printing: ^5.12.0
   csv: ^5.0.0
-
+  
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
   build_runner: ^2.3.3
   json_serializable: ^6.7.0
   flutter_lints: ^2.0.0
-    drift_dev: ^2.13.0
-
-flutter:
-  uses-material-design: true
-  assets:
-    - assets/demo/
+  drift_dev: ^2.13.0
