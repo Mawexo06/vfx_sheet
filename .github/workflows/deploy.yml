@@ -47,6 +47,7 @@ jobs:
           convert -size 512x512 xc:"#121212" -gravity center -font DejaVu-Sans -pointsize 300 label:"🎬" -flatten web/icons/icon-512.png
           convert web/icons/icon-512.png -resize 192x192 web/icons/icon-192.png
       # END PATCH: Fetch demo assets and PWA icons
+  - run: flutter pub run build_runner build --delete-conflicting-outputs
 
       - run: flutter build web --release --base-href "$BASE_HREF" --dart-define=WEB_BUILD=true
       - run: cp build/web/index.html build/web/404.html
