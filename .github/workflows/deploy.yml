@@ -16,11 +16,14 @@ jobs:
           channel: stable
 
       - run: flutter pub get
-   #   - run: flutter analyze
-   ###   - run: flutter test
+      # Optional: linting and tests
+      # - run: flutter analyze
+      # - run: flutter test
 
-            - run: flutter create . --platforms=web
-- id: set-base-href
+      # Configure for web if not yet configured
+      - run: flutter create . --platforms=web
+
+      - id: set-base-href
         run: |
           REPO_NAME=${{ github.event.repository.name }}
           if [[ "$REPO_NAME" == *.github.io ]]; then
