@@ -32,6 +32,21 @@ jobs:
           else
             echo "BASE_HREF=/$REPO/" >> $GITHUB_ENV
           fi
+      # BEGIN PATCH: Fetch demo assets and PWA icons
+      - name: Fetch demo assets
+        run: |
+          mkdir -p assets/demo web/icons
+          curl -L "https://placehold.co/1024x1024/png?text=Grey+Ball"   -o assets/demo/grey_ball.png
+          curl -L "https://placehold.co/1024x1024/png?text=Chrome+Ball" -o assets/demo/chrome_ball.png
+          curl -L "https://placehold.co/1280x720/png?text=ColorChecker" -o assets/demo/colorchecker.png
+
+      - name: Generate PWA icons
+        run: |
+          sudo apt-get update && sudo apt-get install -y imagemagick fonts-dejavu-core
+          mkdir -p web/icons
+          convert -size 512x512 xc:"#121212" -gravity center -font DejaVu-Sans -pointsize 300 label:"🎬" -flatten web/icons/icon-512.png
+          convert web/icons/icon-512.png -resize 192x192 web/icons/icon-192.png
+      # END PATCH: Fetch demo assets and PWA icons
 
       - run: flutter build web --release --base-href "$BASE_HREF" --dart-define=WEB_BUILD=true
       - run: cp build/web/index.html build/web/404.html
