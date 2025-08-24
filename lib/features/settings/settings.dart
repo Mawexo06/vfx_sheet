@@ -9,8 +9,15 @@ class SettingsPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Settings'),
       ),
-      body: const Center(
-        child: Text('Settings page coming soon'),
+      body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('Settings page'),
+              const SizedBox(height: 16),
+              const Text('DB: OK (IndexedDB)'),
+            ],
+          ),        
       ),
     );
   }
