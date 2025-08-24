@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:drift/drift.dart';
+import 'package:drift/drift.dart' hide Column;
 import '../../core/data/database.dart';
 
 class DayDashboardPage extends StatefulWidget {
