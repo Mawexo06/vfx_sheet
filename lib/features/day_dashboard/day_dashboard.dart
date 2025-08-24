@@ -9,9 +9,21 @@ class DayDashboardPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Day Dashboard'),
       ),
-      body: const Center(
-        child: Text('Day Dashboard coming soon'),
-      ),
+  body: Center(
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text('Day Dashboard coming soon'),
+        const SizedBox(height: 16),
+        Image.asset(
+          'assets/demo/grey_ball.png',
+          width: 200,
+          height: 200,
+        ),
+      ],
+    ),
+  ),
+  ), ),
     );
   }
 }
