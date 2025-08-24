@@ -1,6 +1,6 @@
 # On-Set VFX Sheet
 
-This project is a Flutter Web progressive web app (PWA) for logging VFX data on set. It is designed to work offline-first, provide quick entry for common VFX checklists, and export your metadata as PDF, CSV or JSON..
+This project is a Flutter Web progressive web app (PWA) for logging VFX data on set. It is designed to work offline-first, provide quick entry for common VFX checklists, and export your metadata as PDF, CSV or JSON...
 
 ## Live Demo
 
