@@ -3,6 +3,14 @@ import 'package:drift/web.dart';
 
 part 'database.g.dart';
 
+@DriftDatabase(tables: [Projects, ShootingDays, Slates, Shots, Takes])
+class AppDatabase extends _$AppDatabase {
+  AppDatabase() : super(WebDatabase();
+
+  @override
+  int get schemaVersion => 1;
+}
+
 class Projects extends Table {
   IntColumn get id => integer().autoIncrement()();
   TextColumn get code => text()();
@@ -37,13 +45,6 @@ class Takes extends Table {
   IntColumn get takeNumber => integer()();
   DateTimeColumn get createdAt => dateTime().withDefault(currentDateAndTime);
 }
-
-@DriftDatabase(tables: [Projects, ShootingDays, Slates, Shots, Takes])
-class AppDatabase extends _$AppDatabase {
-  AppDatabase() : super(WebDatabase();
-
-  @override
-  int get schemaVersion => 1;
 
   Future<void> seed() async {
     // Implement seeding logic in later steps
