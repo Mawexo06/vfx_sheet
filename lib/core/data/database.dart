@@ -7,7 +7,7 @@ class Projects extends Table {
   IntColumn get id => integer().autoIncrement()();
   TextColumn get code => text()();
   TextColumn get title => text()();
-  DateTimeColumn get createdAt => dateTime().withDefault(currentDateAndTime)();
+  DateTimeColumn get createdAt => dateTime().withDefault(currentDateAndTime);
   DateTimeColumn get updatedAt => dateTime().nullable()();
 }
 
@@ -28,14 +28,14 @@ class Shots extends Table {
   IntColumn get id => integer().autoIncrement()();
   IntColumn get slateId => integer()();
   TextColumn get shotCode => text()();
-  DateTimeColumn get createdAt => dateTime().withDefault(currentDateAndTime)();
+  DateTimeColumn get createdAt => dateTime().withDefault(currentDateAndTime);
 }
 
 class Takes extends Table {
   IntColumn get id => integer().autoIncrement()();
   IntColumn get shotId => integer()();
   IntColumn get takeNumber => integer()();
-  DateTimeColumn get createdAt => dateTime().withDefault(currentDateAndTime)();
+  DateTimeColumn get createdAt => dateTime().withDefault(currentDateAndTime);
 }
 
 @DriftDatabase(tables: [Projects, ShootingDays, Slates, Shots, Takes])
