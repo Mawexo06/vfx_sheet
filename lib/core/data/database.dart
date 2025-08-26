@@ -1,11 +1,11 @@
 import 'package:drift/drift.dart';
-import 'package:drift/web.dart';
+import 'package:drift/web.dart'; // pre web IndexedDB
 
 part 'database.g.dart';
 
-@DriftDatabase(tables: [Projects, ShootingDays, Slates, Shots, Takes])
+@DriftDatabase(tables: [ /* tvoje tabuľky */ ])
 class AppDatabase extends _$AppDatabase {
-  AppDatabase() : super(WebDatabase();
+  AppDatabase() : super(WebDatabase('vfx_sheet'));
 
   @override
   int get schemaVersion => 1;
